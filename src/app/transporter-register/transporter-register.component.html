@@ -1,0 +1,127 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="form">
+
+    <div *ngIf="transporter.id == 0; else elseTitle">
+      <div class="form-title">
+        Cadastrar
+      </div>
+    </div>
+    <ng-template #elseTitle>
+      <div class="form-title">
+        Atualizar / Deletar Transportadora
+      </div>
+    </ng-template>
+
+    <form>
+
+      <div class="form-group col-md-6">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" name="email" required [(ngModel)]="transporter.email">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" name="name" [(ngModel)]="transporter.name">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="empresa">Empresa</label>
+        <input type="text" class="form-control" id="empresa" name="company" [(ngModel)]="transporter.company">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="telefone">Telefone</label>
+        <input type="text" class="form-control" id="telefone" name="phone" [(ngModel)]="transporter.phone">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="celular">Celular</label>
+        <input type="text" class="form-control" id="celular">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="whatsapp">Whatsapp</label>
+        <input type="text" class="form-control" id="whatsapp">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="modal">Modal</label>
+        <select id="modal" class="form-control" name="modal" [(ngModel)]="transporter.modal">
+          <option selected>Escolha...</option>
+          <option>Aéreo</option>
+          <option>Aquaviário</option>
+          <option>Rodoviário</option>
+        </select>
+      </div>
+
+      <div class="row">
+
+        <div class="form-group col-md-7">
+          <label for="cep">CEP</label>
+          <input type="text" class="form-control" id="cep">
+        </div>
+
+        <div class="form-group col-md-5">
+          <label for="uf">Estado</label>
+          <select id="uf" class="form-control" name="uf" [(ngModel)]="transporter.uf">
+            <option selected>Escolha...</option>
+            <option>PE</option>
+            <option>SP</option>
+            <option>RJ</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="cidade">Cidade</label>
+        <input type="text" class="form-control" id="cidade" name="city" [(ngModel)]="transporter.city">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="bairro">Bairro</label>
+        <input type="text" class="form-control" id="bairro" name="neighbourhood" [(ngModel)]="transporter.neighbourhood">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="rua_avenida">Rua/Avenida</label>
+        <input type="text" class="form-control" id="rua_avenida" name="street" [(ngModel)]="transporter.street">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="numero">Número</label>
+        <input type="text" class="form-control" id="numero" name="number" [(ngModel)]="transporter.number">
+      </div>
+
+      <div class="form-group col-md-6 text-center logo">
+        <input type="file" id="logo" style="display: none;">
+        <label for="logo">
+          <img alt="logo-company" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQTiW5BKzKpbAw_m1pp9osI_m-_VcRAOQdug_Cz4r96UlAegjvn " class="placeholder" >
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="termos">
+        <label class="form-check-label" for="termos">
+          Eu aceito os termos de serviço
+        </label>
+      </div>
+
+      <div *ngIf="transporter.id == 0; else elseBlock">
+        <button type="submit" class="btn btn-success mt-4 mb-4" (click)="insert()" >Cadastrar-se agora!</button>
+      </div>
+       <ng-template #elseBlock>
+         <div class="row-cols-md-2">
+           <button type="submit" class="btn btn-info mt-4 mb-4" (click)="update()" >Atualizar</button>
+           <button type="submit" class="btn btn-danger mt-4 mb-4" (click)="delete()">Deletar</button>
+         </div>
+
+       </ng-template>
+
+    </form>
+
+    <div class="form-footer">
+      &nbsp;
+    </div>
+  </div>
+</div>

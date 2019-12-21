@@ -1,0 +1,30 @@
+<h6 >Transportadoras</h6>
+
+<p>{{countTransporters}} resultados</p>
+
+<hr>
+
+<h6>Nome</h6>
+<div class="input-group input-group-sm mb-3">
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+</div>
+
+<h6>Localização (UFs)</h6>
+<ul >
+  <li *ngFor="let uf of ufs">{{uf}}</li>
+</ul>
+
+<h6>Localização (Municípios)</h6>
+<ul>
+  <li *ngFor="let ct of citeis">{{ct}} (115)</li>
+</ul>
+
+<h6>Modal</h6>
+<ul>
+  <li>Rodoviário (115)</li>
+  <li>Aéreo (115)</li>
+  <li>Aquaviario (115)</li>
+</ul>
+
+
+

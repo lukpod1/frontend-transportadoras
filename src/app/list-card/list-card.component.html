@@ -1,0 +1,28 @@
+<div *ngFor="let transp of transporters" class="container-list">
+  <div class="card mb-12" >
+    <div class="row no-gutters" >
+      <div class="col-md-2">
+        <img src="https://png.pngtree.com/element_pic/00/16/07/115783931601b5c.jpg" class="card-img" alt="...">
+      </div>
+      <div class="col-md-3">
+        <div class="card-body ">
+          <p class="card-text"><a routerLink="/find/transporter/{{transp.id}}">{{transp.company}}</a></p>
+          <p class="card-text">{{transp.name}}</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-body">
+          <p class="card-text">{{transp.phone}}</p>
+          <p class="card-text">{{transp.email}}</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card-body">
+          <p class="card-text">Fale Agora: {{transp.phone}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
